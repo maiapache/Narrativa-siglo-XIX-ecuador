@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Narrativa del Siglo XIX en Ecuador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Narrativa del Siglo XIX en Ecuador</h1>
+  </header>
+
+  <nav style="text-align:center;padding:14px;">
+    <button onclick="mostrar('contexto')">Contexto</button>
+    <button onclick="mostrar('estructura')">Estructura</button>
+    <button onclick="mostrar('caracteristicas')">Características</button>
+    <button onclick="mostrar('autores')">Autores</button>
+    <button onclick="mostrar('fragmento')">Fragmento</button>
+  </nav>
+
+  <main>
+    <!-- ========== Contexto: galería + imagen principal ========== -->
+    <section id="contexto" class="visible">
+    <h2>Contexto Histórico y Social</h2>
+
+    <div class="gallery">
+        <div class="img-card">
+            <img src="img/republicanos.jpg">
+            <p>Primeros gobiernos republicanos: luchas por el poder y constitución del Estado.</p>
+        </div>
+
+        <div class="img-card">
+            <img src="img/romanticismo.jpg">
+            <p>El Romanticismo inspiró la exaltación del heroísmo y la libertad.</p>
+        </div>
+
+        <div class="img-card">
+            <img src="img/narrativa.jpg">
+            <p>Surgimiento de instituciones culturales y literarias.</p>
+        </div>
+    </div>
+
+    <h3>Haz clic en la imagen para descubrir más 👇</h3>
+
+    <div class="reveal-box" onclick="toggleHistory()">
+        <img src="img/narrativa2.jfif">
+        <div class="overlay-text">Clic para ver más</div>
+    </div>
+
+    <div id="history-info" class="hidden-info">
+        <p>
+            Durante el siglo XIX, Ecuador vivió entre la inestabilidad política,
+            la lucha por la construcción de la identidad nacional y el fuerte
+            impacto de movimientos ideológicos como el Romanticismo.
+            La literatura se convirtió en un medio para reflexionar la
+            historia del país, su diversidad cultural y sus conflictos.
+        </p>
+    </div>
+</section>
+
+
+    <!-- ========== Texto extenso: panel/modal ========== -->
+    <div id="panelContexto" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closePanel()" role="button">&times;</span>
+        <h3>La sociedad del siglo XIX en Ecuador</h3>
+        <p style="text-align:left;line-height:1.6">
+          Durante el siglo XIX el nuevo Estado ecuatoriano atravesó procesos de consolidación política tras la independencia (1822–1830),
+          alternancia entre gobiernos conservadores y liberales, y la intensa influencia de la Iglesia Católica en la vida pública.
+          La literatura narrativa —desde 1855 hasta fines de siglo— se convirtió en un espacio para imaginar la nación: la naturaleza, las costumbres,
+          las tensiones entre tradición y modernidad, y modelos morales. Muchas novelas usaron la geografía (sierra, costa, selva) como marco identitario
+          y colocaron la figura de la mujer, el indígena y el mestizo en situaciones que reflejaban los conflictos sociales de la época.
+        </p>
+      </div>
+    </div>
+
+  <section id="estructura" class="fade-in">
+    <h2>Estructura de la Narrativa del Siglo XIX en Ecuador</h2>
+    <div class="estructura-container">
+
+        <div class="estructura-card" onclick="openStructureModal(
+            'Estructura Clásica',
+            'Las obras se desarrollaban con una estructura narrativa tradicional: inicio, nudo y desenlace, muchas veces con una enseñanza moral.'
+        )">
+            <h3>📖 Estructura clásica</h3>
+        </div>
+
+        <div class="estructura-card" onclick="openStructureModal(
+            'Narrador Omnisciente',
+            'El narrador conocía todo: pensamientos, emociones y contexto histórico. Esto reforzaba el tono descriptivo de la época.'
+        )">
+            <h3>👁️ Narrador omnisciente</h3>
+        </div>
+
+        <div class="estructura-card" onclick="openStructureModal(
+            'Personajes idealizados',
+            'Los héroes eran valientes, las mujeres virtuosas y los villanos simbolizaban injusticias sociales o políticas.'
+        )">
+            <h3>✨ Personajes idealizados</h3>
+        </div>
+
+        <div class="estructura-card" onclick="openStructureModal(
+            'Descripciones detalladas',
+            'Se describían paisajes, costumbres y emociones con un lenguaje rico y literario para exaltar identidad nacional.'
+        )">
+            <h3>🌄 Descripciones detalladas</h3>
+
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+   <section id="caracteristicas">
+    <h2>Características de la narrativa del siglo XIX en Ecuador</h2>
+
+    <div class="carousel">
+        <div class="car-item" onclick="openFeatureModal(0)">Influencia del Romanticismo</div>
+        <div class="car-item" onclick="openFeatureModal(1)">Búsqueda de identidad nacional</div>
+        <div class="car-item" onclick="openFeatureModal(2)">Denuncia social</div>
+        <div class="car-item" onclick="openFeatureModal(3)">Lenguaje literario y formal</div>
+    </div>
+</section>
+
+  <!-- Modal Características -->
+  <div id="featureModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeFeatureModal()">&times;</span>
+        <h3 id="featureTitle"></h3>
+        <img id="featureImage" style="width:100%; border-radius:10px; margin:10px 0;">
+        <p id="featureText"></p>
+    </div>
+  </div>
+
+
+</div>
+
+</section>
+
+
+    <!-- ========== Autores: tarjetas que se voltean ========== -->
+    <!-- ========== Autores: tarjetas que se voltean ========== -->
+<section id="autores" class="visible">
+  <h2>Principales representantes</h2>
+
+  <div class="author-cards">
+
+    <!-- Card 1 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Juan_Le%C3%B3n_Mera.png">
+        <h3>Juan León Mera</h3>
+      </div>
+      <div class="card-back">
+        <p>Autor de Cumandá y figura clave del romanticismo ecuatoriano.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Juan_Montalvo.jpg">
+        <h3>Juan Montalvo</h3>
+      </div>
+      <div class="card-back">
+        <p>Ensayista liberal, crítico político.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Miguel_Riofr%C3%ADo.png">
+        <h3>Miguel Riofrío</h3>
+      </div>
+      <div class="card-back">
+        <p>Autor de La Emancipada, crítica social y libertad femenina.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Juan_Jos%C3%A9_Flores.jpg">
+        <h3>Juan José Flores</h3>
+      </div>
+      <div class="card-back">
+        <p>Impulsor de la vida cultural en la joven república.</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Dolores_Veintimilla_de_Galindo.jpg">
+        <h3>Dolores Veintimilla</h3>
+      </div>
+      <div class="card-back">
+        <p>Poesía sentimental y denuncia social.</p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="author-card" onclick="flipCard(this)" role="button" tabindex="0">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Federico_Gonz%C3%A1lez_Su%C3%A1rez%2C_c._1900.jpg">
+        <h3>González Suárez</h3>
+      </div>
+      <div class="card-back">
+        <p>Historiador y humanista nacionalista.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========== Fragmento: La Emancipada ========== -->
+<!-- ========== Fragmento: La Emancipada ========== -->
+<section id="fragmento">
+  <h2>Fragmento — LA EMANCIPADA</h2>
+
+  <div class="book-box">
+    <div class="book">
+      
+      <div class="front-cover" onclick="openBook()">
+        <img src="img/emancipada.jpg" alt="Portada">
+      </div>
+
+      <div class="inner-book">
+
+        <!-- Página izquierda -->
+        <div class="left-page">
+          <p>
+            “En la joven, su altura, flexibilidad y gentileza se ostentaban como el
+            bambú de las orillas de su río: su tez fina, fresca y delicada la
+            hacía semejante a la estación en que los campos reverdecen; la ceja
+            negra, y las pupilas y los cabellos de un castaño oscuro le daban
+            cierta gracia que le era propia y privativa. Su mirar franco y
+            despejado, una ondulación que mostraba el labio inferior como
+            desdeñando al superior y el atrevido perfil de su nariz, daban a su
+            rostro una expresión de firmeza inconmovible.”
+          </p>
+        </div>
+
+        <!-- Página derecha -->
+        <div class="right-page">
+          <p>
+            “No había una perfecta consonancia en sus facciones;
+            por eso el conjunto tenía no sé qué de extraordinario: la limpieza de
+            su frente y la morbidez de sus mejillas que se encendían con la
+            emoción, parecían signos de candor: la barba perfectamente arqueada
+            imprimía en todo su rostro cierto aire de voluptuosidad: una
+            contracción casi imperceptible en el entrecejo mostraba haber
+            reprimido de tiempo atrás alguna pasión violenta: el cuello levemente
+            agobiado le daba una actitud dudosa entre la timidez y la modestia:
+            de modo que ningún fisiógnomo habría podido adivinar su carácter moral
+            y fisiológico con bastante precisión.”
+          </p>
+        </div>
+
+        <button class="close-btn" onclick="closeBook()">✕</button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Panel grande del contexto -->
+  <div id="contextPanelSmall" style="display:none;"></div>
+
+  <script>
+    /* ---------------- utilidades de navegación y secciones ---------------- */
+    function mostrar(id) {
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('visible'));
+      const el = document.getElementById(id);
+      if (el) el.classList.add('visible');
+      // close any open modal/panel
+      closeAllModals();
+    }
+
+    /* ---------------- modal / panel manejo ---------------- */
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (!m) return;
+      m.style.display = 'flex';
+      m.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAllModals() {
+      document.querySelectorAll('.modal').forEach(m => {
+        m.style.display = 'none';
+        m.setAttribute('aria-hidden','true');
+      });
+      document.body.style.overflow = '';
+    }
+
+    /* ---- panel específico para la imagen principal (aparece como modal) ---- */
+    function openPanel() {
+      const p = document.getElementById('panelContexto');
+      if (!p) return;
+      p.style.display = 'flex';
+      p.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePanel() {
+      const p = document.getElementById('panelContexto');
+      if (!p) return;
+      p.style.display = 'none';
+      p.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    /* ---------------- flip card (autores) ---------------- */
+    function flipCard(card) {
+      // toggle the flipped class on click
+      card.classList.toggle('flipped');
+    }
+
+    /* ---------------- accessibility: allow Enter key to flip/open ---------------- */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeAllModals();
+        closePanel();
+      }
+      // If focused on an author card and press Enter -> flip
+      const active = document.activeElement;
+      if ((e.key === 'Enter' || e.key === ' ') && active && active.classList.contains('author-card')) {
+        e.preventDefault();
+        flipCard(active);
+      }
+      // If Enter on a work-card open modal (works use work-card class)
+      if ((e.key === 'Enter' || e.key === ' ') && active && active.classList.contains('work-card')) {
+        e.preventDefault();
+        // fallback: try to click
+        active.click();
+      }
+    });
+
+    /* ---------------- close if click outside modal-content ---------------- */
+    document.addEventListener('click', function(ev) {
+      // close modal when clicking on overlay (modal background)
+      document.querySelectorAll('.modal').forEach(m => {
+        if (m.style.display === 'flex' && ev.target === m) {
+          closeAllModals();
+        }
+      });
+      // close context panel if click outside
+      const panel = document.getElementById('panelContexto');
+      if (panel && panel.style.display === 'flex' && ev.target === panel) {
+        closePanel();
+      }
+    });
+
+    /* ---------------- small enhancement: keyboard focus style for cards ---------------- */
+    document.querySelectorAll('.img-card, .author-card, .work-card').forEach(el => {
+      el.addEventListener('focus', () => el.style.outline = '3px solid rgba(184,154,114,0.25)');
+      el.addEventListener('blur', () => el.style.outline = 'none');
+    });
+
+    function toggleHistory() {
+    const info = document.getElementById('history-info');
+    info.style.display = (info.style.display === "block") ? "none" : "block";
+    }
+
+    function toggleAcc(el) {
+    el.classList.toggle("active");
+    const text = el.querySelector("p");
+    text.style.display = text.style.display === "block" ? "none" : "block";
+
+    function openAccWithImage(el, imgSrc) {
+    // Alternar acordeón
+    el.classList.toggle("active");
+    const text = el.querySelector("p");
+    text.style.display = text.style.display === "block" ? "none" : "block";
+
+    // Solo abre imagen si se está abriendo la tarjeta
+    if (text.style.display === "block") {
+        openLightbox(imgSrc);
+    }
+    }   
+    }
+
+    const features = [
+    {
+        title: "Influencia del Romanticismo",
+        img: "img/romanticismo2.png",
+        text: "La narrativa ecuatoriana adoptó un enfoque emocional, exaltando la naturaleza y el amor imposible."
+    },
+    {
+        title: "Búsqueda de identidad nacional",
+        img: "img/identidadnacional.png",
+        text: "Las obras comienzan a destacar lo autóctono, las culturas indígenas y la nación en formación."
+    },
+    {
+        title: "Denuncia social",
+        img: "img/denunciasocial.jfif",
+        text: "Se expusieron injusticias sociales, especialmente hacia pueblos indígenas y campesinos."
+    },
+    {
+        title: "Lenguaje formal y literario",
+        img: "img/lenguaje.jpg",
+        text: "Se utiliza un estilo culto, con abundantes descripciones y recursos literarios."
+    }
+];
+
+function openFeatureModal(i) {
+    document.getElementById("featureTitle").innerText = features[i].title;
+    document.getElementById("featureImage").src = features[i].img;
+    document.getElementById("featureText").innerText = features[i].text;
+    document.getElementById("featureModal").style.display = "flex";
+}
+
+function closeFeatureModal() {
+    document.getElementById("featureModal").style.display = "none";
+}
+
+function openStructureModal(title, text) {
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("featureModal").style.display = "flex";
+}
+
+function openBook() {
+  const cover = document.querySelector('.front-cover');
+  const pages = document.querySelector('.inner-book');
+
+  cover.classList.add('open');
+  
+  setTimeout(() => {
+    cover.style.display = 'none';
+    pages.style.display = 'block';
+    setTimeout(() => pages.classList.add('show'), 50);
+  }, 800);
+}
+
+function closeBook() {
+  const cover = document.querySelector('.front-cover');
+  const pages = document.querySelector('.inner-book');
+
+  pages.classList.remove('show');
+  setTimeout(() => {
+    pages.style.display = 'none';
+    cover.style.display = 'block';
+    cover.classList.remove('open');
+  }, 600);
+}
+
+
+    </script>
+
+  <footer style="text-align:center;padding:18px;color:rgba(62,47,28,0.7)">
+    Material educativo — incluye fragmentos de dominio público o extractos para estudio.
+  </footer>
+</body>
+</html>
